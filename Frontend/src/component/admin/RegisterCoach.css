@@ -1,0 +1,91 @@
+.register-coach-container {
+    position: relative;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-coach-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.register-coach-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+}
+
+.success-message {
+    text-align: center;
+    color: #28a745;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.register-coach-form .form-group {
+    margin-bottom: 15px;
+}
+
+.register-coach-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+    font-family: 'Arial', sans-serif;
+}
+
+.register-coach-form input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.register-coach-form input:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #007BFF, #0056b3);
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+    background: linear-gradient(135deg, #0056b3, #004494);
+    transform: translateY(-2px);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0;
+    display: inline-block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #333;
+}

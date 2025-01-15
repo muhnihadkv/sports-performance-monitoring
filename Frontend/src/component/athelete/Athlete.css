@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-light: #f5f7fa;
+    --text-dark: #333;
+    --text-light: #555;
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f5f7fa 0%, #f5f7fa 100%);
+}
+
+.athlete-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    width: 100%;
+    padding: 20px;
+    overflow-x: auto;
+    perspective: 1000px;
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.profile-card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 30px;
+    border: 5px solid white;
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.2);
+    transition: transform var(--transition-speed);
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+.profile-info h2 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.profile-info p {
+    font-size: 1em;
+    color: var(--text-light);
+    margin: 5px 0;
+}
+
+.tabs {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.tab-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.tab-links button {
+    padding: 12px 25px;
+    font-size: 1em;
+    border: none;
+    border-radius: 25px;
+    background-color: #f0f0f0;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-links button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: all var(--transition-speed);
+}
+
+.tab-links button:hover::before {
+    left: 100%;
+}
+
+.tab-links button.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+    margin-top: 10px;
+}
+
+.filter-buttons button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 20px;
+    background-color: #e0e0e0;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.filter-buttons button.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.tab-content {
+    padding: 25px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.tab-table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 0.95em;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.tab-table th, .tab-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.tab-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tab-table tbody tr:hover {
+    background-color: #f1f5fb;
+    transition: background-color var(--transition-speed);
+}
+
+.coach-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .coach-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+    font-weight: 500;
+  }
+  
+  .coach-form input,
+  .coach-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color var(--transition-speed);
+  }
+  
+  .coach-form input:focus,
+  .coach-form select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+  }
+  
+  .coach-form button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1em;
+    transition: all var(--transition-speed);
+  }
+  
+  .coach-form button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+  }
+  
+
+@media (max-width: 768px) {
+    .athlete-container {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .profile-image {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .tab-links, .filter-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tab-links button, .filter-buttons button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
