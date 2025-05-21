@@ -35,3 +35,7 @@ A web-based platform built with **Spring Boot** to help coaches, athletes, and a
    ```bash
    git clone https://github.com/your-username/sports-monitoring-system.git
    cd sports-monitoring-system
+2. **Build and Run**
+   ```bash
+   mvn clean install
+   mvn spring-boot:run
